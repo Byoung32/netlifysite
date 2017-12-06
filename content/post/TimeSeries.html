@@ -1,0 +1,32 @@
+---
+title: "Time Series"
+author: "bky"
+output: html_document
+---
+
+
+
+<div id="time-series" class="section level1">
+<h1>Time Series</h1>
+<p>The last way of visually representing data is through a time series plot. A time series plot displays values against time. They are similar to x-y graphs, but while an x-y graph can plot a variety of “x” variables (for example, height, weight, age), timeplots can only display time on the x-axis. Unlike pie charts and bar charts, these plots do not have categories. Timeplots are good for showing how data changes over time.</p>
+<p>First we will import the necessary packages:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(devtools)
+library(ggplot2)</code></pre>
+<p>Next we will extract the data:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT yearID,HR FROM Batting WHERE playerID=&#39;ruthba01&#39;&quot;
+
+result&lt;-sqldf(query)</code></pre>
+<p>Last we will visualize the data:</p>
+<pre class="r"><code>ggplot()+
+  geom_point(data=result,aes(x=yearID,y=HR),color=&quot;black&quot;)+
+  geom_line(data=result,aes(x=yearID,y=HR),color=&quot;red&quot;)+
+  ggtitle(&quot;Ruth&#39;s Homerun Totals Through the Years&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/TimeSeries_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>

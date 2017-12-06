@@ -1,0 +1,29 @@
+---
+title: "Histograms"
+author: "bky"
+output: html_document
+---
+
+
+
+<div id="histograms" class="section level1">
+<h1>Histograms</h1>
+<p>One other way to visually represent data is by inserting the data into a histogram chart. A histogram is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval.</p>
+<p>First we will import the necessary packages:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<p>Now we will use the following syntax to represent the data in a histogram chart:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT weight FROM Master&quot;
+
+result&lt;-sqldf(query)
+
+ggplot()+
+  geom_histogram(data=result,aes(x=weight),color=&quot;black&quot;,fill=&quot;red&quot;,bins=50)+
+  ggtitle(&quot;Body-Weight Distribution for Baseball Players&quot;)</code></pre>
+<pre><code>## Warning: Removed 854 rows containing non-finite values (stat_bin).</code></pre>
+<p><img src="/post/Histogram_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>

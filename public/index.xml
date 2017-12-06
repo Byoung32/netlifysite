@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brandon Young&#39;s blog</title>
+    <link>/</link>
+    <description>Recent content on Brandon Young&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Histograms</title>
+      <link>/post/histogram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/histogram/</guid>
+      <description>HistogramsOne other way to visually represent data is by inserting the data into a histogram chart. A histogram is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval.
+First we will import the necessary packages:
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Now we will use the following syntax to represent the data in a histogram chart:</description>
+    </item>
+    
+    <item>
+      <title>Scatterplot</title>
+      <link>/post/scatterplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/scatterplot/</guid>
+      <description>ScatterplotsAnother way to visually represent data is by using a scatterplot. A scatterplot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data.
+First we will import the necessary packages:
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(devtools)library(ggplot2)Next we will extract the data:
+query&amp;lt;-&amp;quot;SELECT playerID,sum(HR) AS career_HR,sum(SO) AS career_SO FROM Batting GROUP BY playerID HAVING sum(HR)&amp;gt;=400&amp;quot;result&amp;lt;-sqldf(query)And now we will visualize said data:</description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/post/timeseries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/timeseries/</guid>
+      <description>Time SeriesThe last way of visually representing data is through a time series plot. A time series plot displays values against time. They are similar to x-y graphs, but while an x-y graph can plot a variety of “x” variables (for example, height, weight, age), timeplots can only display time on the x-axis. Unlike pie charts and bar charts, these plots do not have categories. Timeplots are good for showing how data changes over time.</description>
+    </item>
+    
+    <item>
+      <title>barplot</title>
+      <link>/post/barplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/barplot/</guid>
+      <description>Bar PlotsData Visualization is an important concept in data science. Here we will be using a bar plot as an example of data visualization. A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent.
+First we will install the necessary packages for this example:
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(devtools)library(ggplot2)In this example we will be looking at all of the homerun totals of all of the teams in the MLB during the 1980’s:</description>
+    </item>
+    
+  </channel>
+</rss>

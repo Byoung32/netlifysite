@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Posts &middot; Brandon Young&#39;s blog</title>
+        <meta name="author">
+        <meta name="description" content="The awesome blog of Brandon Young.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Brandon Young&#39;s blog" />
+        <link href="/post/index.xml" rel="feed" type="application/rss+xml" title="Brandon Young&#39;s blog" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/css/highlightjs/monokai.css">
+        <script src="/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(/img/nyc.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(/img/nyc.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(/img/nyc.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>Data Science Blog</h2>
+          </div>
+        </header>
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <a class="btn home" href="/" title="Back to home">&laquo; Back to home</a>
+        
+        
+            <article class="post">
+    
+<h1><a href="/post/histogram/" title="Histograms">Histograms</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+
+</span>
+</footer>
+
+    <p><p>Histograms
+One other way to visually represent data is by inserting the data into a histogram chart. A histogram is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval.
+First we will import the necessary packages:
+library(Lahman)
+library(sqldf)</p>
+
+<h2 id="loading-required-package-gsubfn">Loading required package: gsubfn</h2>
+
+<h2 id="loading-required-package-proto">Loading required package: proto</h2>
+
+<h2 id="loading-required-package-rsqlite">Loading required package: RSQLite</h2>
+
+<p>library(ggplot2)
+Now we will use the following syntax to represent the data in a histogram chart:</p>
+&hellip;</p>
+    <a href="/post/histogram/" title="Histograms">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="/post/scatterplot/" title="Scatterplot">Scatterplot</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+
+</span>
+</footer>
+
+    <p><p>Scatterplots
+Another way to visually represent data is by using a scatterplot. A scatterplot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data.
+First we will import the necessary packages:
+library(Lahman)
+library(sqldf)</p>
+
+<h2 id="loading-required-package-gsubfn">Loading required package: gsubfn</h2>
+
+<h2 id="loading-required-package-proto">Loading required package: proto</h2>
+
+<h2 id="loading-required-package-rsqlite">Loading required package: RSQLite</h2>
+
+<p>library(devtools)
+library(ggplot2)
+Next we will extract the data:
+query&lt;-&quot;SELECT playerID,sum(HR) AS career_HR,
+sum(SO) AS career_SO FROM Batting GROUP BY playerID HAVING sum(HR)&gt;=400&quot;
+result&lt;-sqldf(query)
+And now we will visualize said data:</p>
+&hellip;</p>
+    <a href="/post/scatterplot/" title="Scatterplot">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="/post/timeseries/" title="Time Series">Time Series</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+
+</span>
+</footer>
+
+    <p>Time Series
+The last way of visually representing data is through a time series plot. A time series plot displays values against time. They are similar to x-y graphs, but while an x-y graph can plot a variety of “x” variables (for example, height, weight, age), timeplots can only display time on the x-axis. Unlike pie charts and bar charts, these plots do not have categories. Timeplots are good for showing how data changes over time.&hellip;</p>
+    <a href="/post/timeseries/" title="Time Series">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="/post/barplot/" title="barplot">barplot</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+
+</span>
+</footer>
+
+    <p><p>Bar Plots
+Data Visualization is an important concept in data science. Here we will be using a bar plot as an example of data visualization. A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent.
+First we will install the necessary packages for this example:
+library(Lahman)
+library(sqldf)</p>
+
+<h2 id="loading-required-package-gsubfn">Loading required package: gsubfn</h2>
+
+<h2 id="loading-required-package-proto">Loading required package: proto</h2>
+
+<h2 id="loading-required-package-rsqlite">Loading required package: RSQLite</h2>
+
+<p>library(devtools)
+library(ggplot2)
+In this example we will be looking at all of the homerun totals of all of the teams in the MLB during the 1980’s:</p>
+&hellip;</p>
+    <a href="/post/barplot/" title="barplot">Read more &raquo;</a>
+</article>
+
+        
+        <div class="pagination">
+<nav>
+
+	<p class="counter">Page 1 of 1</p>
+
+
+</nav>
+</div>
+
+    </main>
+
+    <aside class="author">
+  <img class="profile-image" src="/img/spooderman.png" alt="Brandon Young" />
+  <p class="name">by 
+  <strong>Brandon Young</strong></p>
+  <p class="address">Mercyhurst University</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/Byoung32" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

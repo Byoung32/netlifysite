@@ -1,0 +1,33 @@
+---
+title: "Scatterplot"
+author: "bky"
+output: html_document
+---
+
+
+
+<div id="scatterplots" class="section level1">
+<h1>Scatterplots</h1>
+<p>Another way to visually represent data is by using a scatterplot. A scatterplot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two variables for a set of data.</p>
+<p>First we will import the necessary packages:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(devtools)
+library(ggplot2)</code></pre>
+<p>Next we will extract the data:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT playerID,sum(HR) AS career_HR,
+sum(SO) AS career_SO FROM Batting 
+GROUP BY playerID HAVING sum(HR)&gt;=400&quot;
+
+result&lt;-sqldf(query)</code></pre>
+<p>And now we will visualize said data:</p>
+<pre class="r"><code>ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR), size=3,color=&quot;red&quot;)+
+  ggtitle(&quot;Career Strikeouts v. Homeruns for Great Hitters&quot;)+
+  xlab(&quot;Career Strikeouts&quot;)+
+  ylab(&quot;Career Homeruns&quot;)</code></pre>
+<p><img src="/post/Scatterplot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>

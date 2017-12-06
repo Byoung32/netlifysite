@@ -1,0 +1,37 @@
+---
+title: "barplot"
+author: "bky"
+output: html_document
+---
+
+
+
+<div id="bar-plots" class="section level1">
+<h1>Bar Plots</h1>
+<p>Data Visualization is an important concept in data science. Here we will be using a bar plot as an example of data visualization. A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights or lengths proportional to the values that they represent.</p>
+<p>First we will install the necessary packages for this example:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(devtools)
+library(ggplot2)</code></pre>
+<p>In this example we will be looking at all of the homerun totals of all of the teams in the MLB during the 1980’s:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR FROM Teams 
+WHERE yearID=1980 
+ORDER BY HR&quot;
+
+result&lt;-sqldf(query)
+
+result$name&lt;-factor(result$name,levels=result$name)</code></pre>
+<p>This part of the example allows us to order the bar plot in any way we want:</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;)+
+  coord_flip()+
+  ggtitle(&quot;1980 Team Homerun Totals&quot;)+
+  xlab(&quot;Team Name&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/barplot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>geom_bar allows us to make the height of the bar proportional to the number of cases in each group coord_flip() flips the axis of the plot</p>
+</div>

@@ -1,0 +1,34 @@
+---
+title: "Time Series"
+author: "bky"
+output: html_document
+---
+#Time Series
+
+The last way of visually representing data is through a time series plot. A time series plot displays values against time. They are similar to x-y graphs, but while an x-y graph can plot a variety of "x" variables (for example, height, weight, age), timeplots can only display time on the x-axis. Unlike pie charts and bar charts, these plots do not have categories. Timeplots are good for showing how data changes over time.
+
+First we will import the necessary packages:
+```{r}
+library(Lahman)
+library(sqldf)
+library(devtools)
+library(ggplot2)
+```
+
+Next we will extract the data:
+```{r}
+query<-"SELECT yearID,HR FROM Batting WHERE playerID='ruthba01'"
+
+result<-sqldf(query)
+```
+
+Last we will visualize the data:
+```{r}
+ggplot()+
+  geom_point(data=result,aes(x=yearID,y=HR),color="black")+
+  geom_line(data=result,aes(x=yearID,y=HR),color="red")+
+  ggtitle("Ruth's Homerun Totals Through the Years")+
+  xlab("Year")+
+  ylab("Homeruns")
+```
+
